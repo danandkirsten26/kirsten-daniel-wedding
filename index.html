@@ -1,111 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kirsten & Daniel's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: sans-serif; background-color: #fefefe; padding: 2em; }
-    .hidden { display: none; }
-    nav { margin-bottom: 2em; }
-    section { margin-bottom: 3em; }
-    input, button, select { padding: 0.5em; font-size: 1em; }
+    :root {
+      --sage: #cdd5c6;
+      --blue: #a8c0d6;
+      --pink: #f6e2e9;
+      --gold: #d6ba73;
+      --ivory: #fefcf7;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background-color: var(--ivory);
+    }
+    header {
+      position: relative;
+      background-image: url('1.JPG');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      background-color: rgba(0,0,0,0.5);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: white;
+      padding: 1rem;
+      font-family: 'Playfair Display', serif;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #476072;
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #476072;
+      font-size: 2em;
+      margin-bottom: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img, .full-width img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .full-width {
+      margin: 3rem auto;
+      max-width: 1000px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #476072;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div id="password-gate">
-    <h2>Enter Password</h2>
-    <input type="password" id="password-input" placeholder="Password">
-    <button onclick="checkPassword()">Enter</button>
-    <p id="password-error" style="color:red;"></p>
-  </div>
+  <header>
+    <h1>Kirsten & Daniel<br>April 11, 2026<br>Braga, Portugal</h1>
+  </header>
 
-  <div id="main-content" class="hidden">
-    <nav>
-      <select onchange="changeLanguage(this.value)">
-        <option value="en">English</option>
-        <option value="pt">Português</option>
-        <option value="es">Español</option>
-      </select>
-    </nav>
+  <nav>
+    <a href="#story">Our Story</a>
+    <a href="#venue">The Venue</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
 
-    <h1 data-en="Kirsten & Daniel's Wedding" data-pt="Casamento de Kirsten & Daniel" data-es="Boda de Kirsten y Daniel"></h1>
+  <section id="story">
+    <h2>Our Story</h2>
+    <img src="2.png" alt="Kirsten & Daniel" style="width:100%; border-radius: 10px; margin-bottom: 2rem;" />
+    <p>
+      Kirsten and Daniel met, fell in love, and are now excited to celebrate their wedding day with you in beautiful Portugal. This day is the culmination of joy, adventure, and years of partnership, and they can’t wait to share it with you.
+    </p>
+  </section>
 
-    <section>
-      <h2 data-en="Our Story" data-pt="Nossa História" data-es="Nuestra Historia"></h2>
-      <p data-en="Kirsten and Daniel met, fell in love, and are now excited to celebrate their wedding day with you in beautiful Portugal!"
-         data-pt="Kirsten e Daniel se conheceram, se apaixonaram e agora estão empolgados para celebrar o casamento com vocês em Portugal!"
-         data-es="Kirsten y Daniel se conocieron, se enamoraron y ahora están emocionados de celebrar su boda con ustedes en Portugal!">
-      </p>
-    </section>
+  <section id="venue">
+    <h2>The Venue</h2>
+    <img src="Venue.jpeg" alt="Solar da Levada venue" style="width:100%; border-radius: 10px; margin-bottom: 2rem;" />
+    <p>
+      Nestled in the lush surroundings of Braga, Portugal, Solar da Levada is a historic and breathtaking estate where Kirsten & Daniel will say “I do.”
+    </p>
+  </section>
 
-    <section>
-      <h2 data-en="Wedding Schedule" data-pt="Programação" data-es="Programa"></h2>
-      <ul>
-        <li data-en="Arrival: 1:30pm" data-pt="Chegada: 13h30" data-es="Llegada: 13:30" ></li>
-        <li data-en="Ceremony: 2:30pm" data-pt="Cerimônia: 14h30" data-es="Ceremonia: 14:30" ></li>
-        <li data-en="Cocktail Hour: 3:15pm" data-pt="Coquetel: 15h15" data-es="Cóctel: 15:15" ></li>
-        <li data-en="Sunset Party: 6:00pm" data-pt="Festa ao Pôr do Sol: 18h00" data-es="Fiesta al Atardecer: 18:00" ></li>
-        <li data-en="Dinner: 7:00pm" data-pt="Jantar: 19h00" data-es="Cena: 19:00" ></li>
-        <li data-en="Cake Cutting: 10:00pm" data-pt="Corte do Bolo: 22h00" data-es="Corte de Pastel: 22:00" ></li>
-        <li data-en="Party: 10:30pm" data-pt="Festa: 22h30" data-es="Fiesta: 22:30" ></li>
-      </ul>
-    </section>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="3.JPG" alt="Photo 1" />
+      <img src="4.JPG" alt="Photo 2" />
+    </div>
+    <div class="full-width">
+      <img src="1.JPG" alt="Header Shot" />
+    </div>
+  </section>
 
-    <section>
-      <h2 data-en="Welcome Dinner" data-pt="Jantar de Boas-Vindas" data-es="Cena de Bienvenida"></h2>
-      <p data-en="Details coming soon." data-pt="Detalhes em breve." data-es="Detalles próximamente."></p>
-    </section>
-
-    <section>
-      <h2 data-en="Accommodations" data-pt="Acomodações" data-es="Alojamiento"></h2>
-      <p data-en="More information to follow." data-pt="Mais informações em breve." data-es="Más información próximamente."></p>
-    </section>
-
-    <section>
-      <h2 data-en="RSVP" data-pt="Confirmação de Presença" data-es="Confirmación de Asistencia"></h2>
-      <form>
-        <label data-en="Name(s):" data-pt="Nome(s):" data-es="Nombre(s):"></label><br>
-        <input type="text"><br>
-        <label data-en="Number of Attendees:" data-pt="Número de Convidados:" data-es="Número de Asistentes:"></label><br>
-        <input type="number"><br>
-        <label data-en="Dietary Restrictions:" data-pt="Restrições Alimentares:" data-es="Restricciones Alimenticias:"></label><br>
-        <input type="text"><br>
-        <label data-en="Song Request:" data-pt="Música Sugerida:" data-es="Cancion Solicitada:"></label><br>
-        <input type="text"><br>
-        <label data-en="Tell us a joke or funny story:" data-pt="Conte uma piada ou história engraçada:" data-es="Cuéntanos un chiste o historia graciosa:"></label><br>
-        <input type="text"><br><br>
-        <button type="submit" data-en="Submit" data-pt="Enviar" data-es="Enviar"></button>
-      </form>
-    </section>
-
-    <section>
-      <h2 data-en="Registry" data-pt="Lista de Presentes" data-es="Lista de Regalos"></h2>
-      <p data-en="Link coming soon." data-pt="Link em breve." data-es="Enlace próximamente."></p>
-    </section>
-
-    <section>
-      <h2 data-en="FAQs" data-pt="Perguntas Frequentes" data-es="Preguntas Frecuentes"></h2>
-      <p data-en="Check back soon for common questions and answers." data-pt="Volte em breve para perguntas e respostas frequentes." data-es="Pronto encontrará preguntas y respuestas frecuentes aquí."></p>
-    </section>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('password-input').value;
-      if (input === 'K&D2026') {
-        document.getElementById('password-gate').classList.add('hidden');
-        document.getElementById('main-content').classList.remove('hidden');
-      } else {
-        document.getElementById('password-error').innerText = 'Incorrect password';
-      }
-    }
-
-    function changeLanguage(lang) {
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.innerText = el.getAttribute('data-' + lang);
-      });
-    }
-  </script>
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <p>
+      Please fill out the form below to RSVP. We can't wait to celebrate with you!
+    </p>
+    <form name="rsvp" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name(s)" required />
+      <input type="number" name="attendees" placeholder="Number of Attendees" required />
+      <input type="text" name="dietary" placeholder="Dietary Restrictions (if any)" />
+      <input type="text" name="song" placeholder="Song Request" />
+      <textarea name="funny" placeholder="Answer our fun question!" rows="3"></textarea>
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </section>
 </body>
 </html>
